@@ -19,6 +19,7 @@ import { useToast } from "@/components/ui/use-toast";
 
 import { ErrorResponseData, ITodo } from "@/common/types";
 import { TodoContext, TodosContextType } from "@/contexts/TodosContext";
+import { API_BASE_URL } from "@/common/constants";
 
 const formSchema = z.object({ description: z.string().min(1) });
 type Schema = z.infer<typeof formSchema>;
@@ -36,7 +37,7 @@ const TodoForm = () => {
     const { mutate, isError, isSuccess, isPending, error, data } = useMutation({
         mutationFn: (newTodo: Schema) => {
             return axios.post<CreateTodoResponse>(
-                `${process.env.API_BASE_URL}/todos`,
+                `${API_BASE_URL}/todos`,
                 newTodo
             );
         },

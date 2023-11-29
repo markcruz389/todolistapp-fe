@@ -14,7 +14,7 @@ import {
 import { useToast } from "@/components/ui/use-toast";
 
 import { ITodo, TodoStatus } from "@/common/types";
-import { TODO_STATUS } from "@/common/constants";
+import { TODO_STATUS, API_BASE_URL } from "@/common/constants";
 import { TodoContext, TodosContextType } from "@/contexts/TodosContext";
 import { ErrorResponseData } from "@/common/types";
 
@@ -38,7 +38,7 @@ const TodoListItem = ({ todo }: Props) => {
             isDeleted?: boolean;
         }) => {
             return axios.put<UpdateTodoResponse>(
-                `${process.env.API_BASE_URL}/todos/${todo.id}`,
+                `${API_BASE_URL}/todos/${todo.id}`,
                 {
                     status,
                     isDeleted,

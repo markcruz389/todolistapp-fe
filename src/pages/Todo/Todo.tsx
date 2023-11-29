@@ -20,7 +20,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 import { TodoContext, TodosContextType } from "@/contexts/TodosContext";
 import { ITodo, ErrorResponseData, TodoStatus } from "@/common/types";
-import { TODO_STATUS } from "@/common/constants";
+import { TODO_STATUS, API_BASE_URL } from "@/common/constants";
 
 type ResponseData = {
     data: {
@@ -43,7 +43,7 @@ const Todo = () => {
         queryKey: ["todos", limit, page, status],
         queryFn: () => {
             return axios.get(
-                `${process.env.API_BASE_URL}/todos/?limit=${limit}&page=${page}&status=${status}`
+                `${API_BASE_URL}/todos/?limit=${limit}&page=${page}&status=${status}`
             );
         },
     });
