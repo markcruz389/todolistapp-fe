@@ -35,7 +35,10 @@ const TodoForm = () => {
     });
     const { mutate, isError, isSuccess, isPending, error, data } = useMutation({
         mutationFn: (newTodo: Schema) => {
-            return axios.post<CreateTodoResponse>("api/todos", newTodo);
+            return axios.post<CreateTodoResponse>(
+                `${process.env.API_BASE_URL}/todos`,
+                newTodo
+            );
         },
     });
 

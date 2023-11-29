@@ -43,7 +43,7 @@ const Todo = () => {
         queryKey: ["todos", limit, page, status],
         queryFn: () => {
             return axios.get(
-                `api/todos/?limit=${limit}&page=${page}&status=${status}`
+                `${process.env.API_BASE_URL}/todos/?limit=${limit}&page=${page}&status=${status}`
             );
         },
     });

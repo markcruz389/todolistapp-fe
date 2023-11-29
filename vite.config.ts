@@ -15,13 +15,13 @@ export default defineConfig({
             "@": path.resolve(__dirname, "./src"),
         },
     },
-    server: {
-        proxy: {
-            "/api": {
-                target: "http://localhost:8000/api/v1",
-                changeOrigin: true,
-                rewrite: (path) => path.replace("/api", ""),
-            },
-        },
-    },
+    // server: {
+    //     proxy: {
+    //         "/api": {
+    //             target: "http://localhost:8000/api/v1",
+    //             changeOrigin: true,
+    //             rewrite: (path) => path.replace("/api", ""),
+    //         },
+    //     },
+    // },
 });

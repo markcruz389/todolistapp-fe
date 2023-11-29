@@ -37,10 +37,13 @@ const TodoListItem = ({ todo }: Props) => {
             status?: TodoStatus;
             isDeleted?: boolean;
         }) => {
-            return axios.put<UpdateTodoResponse>(`api/todos/${todo.id}`, {
-                status,
-                isDeleted,
-            });
+            return axios.put<UpdateTodoResponse>(
+                `${process.env.API_BASE_URL}/todos/${todo.id}`,
+                {
+                    status,
+                    isDeleted,
+                }
+            );
         },
     });
 
