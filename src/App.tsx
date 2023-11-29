@@ -19,7 +19,7 @@ function App() {
             <TodoProvider>
                 <Router>
                     <Routes>
-                        <Route path="/" element={<Navigate to="todo" />} />
+                        <Route path="/" element={<Navigate to="todos" />} />
                         <Route path="/todos" element={<Todo />} />
 
                         <Route path="*" element={<NotFound />} />
